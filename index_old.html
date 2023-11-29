@@ -5,13 +5,13 @@
 
 	<title>My Page</title>
 	
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="https://width=device-width, initial-scale=1">
 	
 	<link rel="stylesheet" href="themes/Seafoam.min.css" />
 	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
-	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
-	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
 	<link rel="stylesheet" href="flexbox.css" />
 </head>
@@ -59,24 +59,6 @@
 				</ul>
 			</div>
 		</header>
-
-        <p>what would you like to contact us for?</p>
-        <a id="vprospect" href="#">vProspect 2.0</a> |
-        <a id="vretain" href="#">vRetain 1.0</a><br>
-        <div id="solution"></div>
-
-        <script>
-            $(document).ready(function() {
-                $("#vprospect").click(function() {
-                    $("#solution").load("solutions.html #vprospect");
-                });
-
-                $("#vretain").click(function() {
-                    $("#solution").load("solutions.html #vretain");
-                });
-            });
-        </script>
-
 		<section class="ui-content" role="main">
 			<h4>Please contact us by phone, mail, or email... whatver works best for you</h4>
 			<h4>Phone</h4><p><a href="tel:555-555-5555">555-555-5555</a></p>
@@ -90,8 +72,6 @@
 		<footer data-role="footer"><h4>&copy; 2023</h4></footer>
 	</div>
 
-    <!-- Management Page -->
-
 	<div class="pg" data-role="page" id="management">
 		<header data-role="header">
 			<h1>Vector</h1>
@@ -100,31 +80,55 @@
 					<a href="#home" data-icon="home" class="ui-btn" data-theme="b" class="ui-block-a"> Home</a>
 					<a href="#contactus" data-icon="phone" class="ui-btn" data-theme="b" class="ui-block-b"> Contact Us</a>
 					<a href="#management" data-icon="star" class="ui-btn-active" data-theme="b" class="ui-block-c"> Management</a>
-
-                    <script>
-                        $(document).ready(function() {
-                            xhr = new XMLHttpRequest();
-                            xhr.onreadystatechange = function() {
-                                if (xhr.readState == 4 && xhr.status == 200) {
-                                    xmlDoc = xhr.responseXML;
-                                    var team = xmlDoc.getElementsByTagName("teammember");
-                                    var html = "";
-                                    for (i = 0; i < team.length; i++) {
-                                        html += xmlDoc.getElementsByTagName("name")[i].childNodes[0].nodeValue+"<br>"
-                                        + xmlDoc.getElementsByTagName("title")[i].childNodes[0].nodeValue+"<br>"
-                                        + xmlDoc.getElementsByTagName("bio")[i].childNodes[0].nodeValue+"<br><br>";
-                                    }
-                                    document.getElementByID("team").innerHTML = html;
-                                }
-                            }
-                            xhr.open("GET","team.xml",true);
-                            xhr.send();
-                        })
-                    </script>
 				</ul>
 			</div>
 		</header>
-		
+		<section class="ui-content ui-grid-a" role="main">
+			<div class="ui-block-a"><center>
+				<img src="images/George Sr.png" width="80%" alt="George-Sr"/>
+				<h4><a href="#George-Sr">George Howell Senior</a></h4>
+				<p>George Howell Sr founded Vector and continues to run it as it's CEO to this day.</p>
+
+				<img src="images/Tina.png" width="80%" alt="Tina"/>
+				<h4><a href="#Tina">Tina Ohri</a></h4>
+				<p>Tina Ohri took Vector from humble beginings that struggled to find customers, and transformed it with inovative advertising teqniques.</p>
+			</center></div>
+			<div class="ui-block-b"><center>
+				<img src="images/Susan.png" width="80%" alt="Susan"/>
+				<h4><a href="#Susan">Susan Grand</a></h4>
+				<p>Susan Grand is Vector's head of HR, and takes pride in a 99% retention rate. </p>
+
+				<img src="images/George Jr.png" width="80%" alt="George-Jr"/>
+				<h4><a href="#George-Jr">George Howell Junior</a></h4>
+				<p>George Howell Jr is Vector's newest member of our management team. He started ten years after the founding of our company at our lowest level, and has worked his way up to being equals with his father.</p>
+			</center></div>
+		</section>
+		<!-- Collapsible Content -->
+		<center><p>-----------------------------</p><p>Collapsible Content</p><p>-----------------------------</p></center>
+		<section data-role="collapsible-set">
+		<div data-role="collapsible" data-collapsed="false">
+			<img src="images/George Sr.png" width="80%" alt="George-Sr"/>
+			<h4><a href="#George-Sr">George Howell Senior</a></h4>
+			<p>George Howell Sr founded Vector and continues to run it as it's CEO to this day.</p>
+		</div>
+
+		<div data-role="collapsible">
+			<img src="images/Tina.png" width="80%" alt="Tina"/>
+			<h4><a href="#Tina">Tina Ohri</a></h4>
+			<p>Tina Ohri took Vector from humble beginings that struggled to find customers, and transformed it with inovative advertising teqniques.</p>
+		</div>
+
+		<div data-role="collapsible">
+			<img src="images/Susan.png" width="80%" alt="Susan"/>
+			<h4><a href="#Susan">Susan Grand</a></h4>
+			<p>Susan Grand is Vector's head of HR, and takes pride in a 99% retention rate. </p>
+		</div>
+
+		<div data-role="collapsible">
+			<img src="images/George Jr.png" width="80%" alt="George-Jr"/>
+			<h4><a href="#George-Jr">George Howell Junior</a></h4>
+			<p>George Howell Jr is Vector's newest member of our management team. He started ten years after the founding of our company at our lowest level, and has worked his way up to being equals with his father.</p>
+		</div>
 	</section>
 		<footer data-role="footer"><h4>&copy; 2023; images provided by Midjourney</h4></footer>
 
