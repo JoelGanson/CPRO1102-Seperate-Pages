@@ -114,7 +114,7 @@
                                         + xmlDoc.getElementsByTagName("title")[i].childNodes[0].nodeValue+"<br>"
                                         + xmlDoc.getElementsByTagName("bio")[i].childNodes[0].nodeValue+"<br><br>";
                                     }
-                                    document.getElementByID("team").innerHTML = html;
+                                    document.getElementByID("team3").innerHTML = html;
                                 }
                             }
                             xhr.open("GET","team.xml",true);
@@ -134,6 +134,30 @@
 								})
 							})
 						})
+
+						$(document).ready(function(){
+
+							$.get("team.xml", function(data){
+
+								$("#team2").html("");
+
+								$(data).find("management").children().each(function() {
+
+									var xmlDoc = $(this);
+
+									$("#team").append("<h3>" +
+
+									xmlDoc.find("name").text() + "</h3>" +
+
+									xmlDoc.find("title").text() + "<br>" +
+
+									xmlDoc.find("bio").text() + "<br>");
+
+								});
+
+							});
+
+						}); 
                     </script>
 				</ul>
 			</div>
@@ -142,7 +166,8 @@
 		</header>
 
 		<section class="ui-content" role="main">
-			
+			<div id="team2"></div>
+			<div id="team3"></div>
 		</section>
 		<footer data-role="footer"><h4>&copy; 2023; images provided by Midjourney</h4></footer>
 
